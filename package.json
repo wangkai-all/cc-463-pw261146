@@ -1,0 +1,16 @@
+{
+  "name": "sales-reconciliation-workbench",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "销售事实表对账工作台：订单、支付、退款三源对账",
+  "scripts": {
+    "start": "node --no-warnings server/index.js",
+    "seed": "node --no-warnings server/seed-cli.js",
+    "seed:reset": "node --no-warnings server/seed-cli.js --reset",
+    "test": "node --no-warnings --test \"test/*.test.js\""
+  },
+  "engines": {
+    "node": ">=22.5"
+  }
+}

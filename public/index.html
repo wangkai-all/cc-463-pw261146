@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>销售事实表对账工作台</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' rx='3' fill='%232a78d6'/><path d='M4 11V5h2v6zm3.5 0V7h2v4zM11 11V4h2v7z' fill='white'/></svg>" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <strong>销售事实表对账工作台</strong>
+        <span>订单 · 支付 · 退款 三源核对</span>
+      </div>
+      <div class="spacer"></div>
+      <label class="actor">
+        当前操作人
+        <select id="actor-select" aria-label="当前操作人">
+          <option value="张敏">张敏 · 对账会计</option>
+          <option value="李强">李强 · 财务主管</option>
+          <option value="陈可">陈可 · 数据治理</option>
+        </select>
+      </label>
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="切换深浅色">深浅色</button>
+    </header>
+
+    <nav class="tabs" role="tablist" aria-label="工作台分区">
+      <button class="tab" role="tab" data-view="overview" aria-selected="true">对账总览</button>
+      <button class="tab" role="tab" data-view="findings" aria-selected="false">
+        差异分类 <span class="count" id="tab-count-findings">–</span>
+      </button>
+      <button class="tab" role="tab" data-view="adjustments" aria-selected="false">
+        调整审批 <span class="count alert" id="tab-count-adjustments">–</span>
+      </button>
+      <button class="tab" role="tab" data-view="recompute" aria-selected="false">
+        重算范围 <span class="count" id="tab-count-scope">–</span>
+      </button>
+      <button class="tab" role="tab" data-view="batches" aria-selected="false">对账批次</button>
+    </nav>
+
+    <main id="root" aria-live="polite"></main>
+  </div>
+
+  <div id="modal-root"></div>
+  <div id="toast-root" aria-live="assertive"></div>
+
+  <script src="/app.js" type="module"></script>
+</body>
+</html>
